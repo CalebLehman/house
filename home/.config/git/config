@@ -1,0 +1,16 @@
+[color]
+	ui = auto
+[commit]
+	verbose = true
+[core]
+	pager = "diff-so-fancy | less --RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
+[interactive]
+	diffFilter = "diff-so-fancy --patch"
+[merge]
+	ff = only
+[status]
+	short = true
+	branch = true
+[user]
+	name = topol
+	email = TopologicalInvariant@gmail.com

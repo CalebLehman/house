@@ -1,0 +1,26 @@
+[character]
+error_symbol = "[π](bold red)"
+success_symbol = "[π](bold green)"
+vimcmd_symbol = "[ε](purple)"
+vimcmd_replace_one_symbol = "[ε](green)"
+vimcmd_replace_symbol = "[ε](green)"
+vimcmd_visual_symbol = "[ε](blue)"
+
+[cmd_duration]
+style = "bold yellow"
+
+[directory]
+style = "bold blue"
+
+[git_branch]
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[hostname]
+style = "bold yellow"
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold cyan"

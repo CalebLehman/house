@@ -1,0 +1,31 @@
+theme = "personal"
+
+[keys.normal]
+'A-{' = "rotate_selection_contents_backward"
+'A-}' = "rotate_selection_contents_forward"
+'A-v' = "keep_selections"
+'A-V' = "remove_selections"
+
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
+u = ":toggle soft-wrap-enable"
+
+[editor]
+completion-trigger-len = 1
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "┆"
+
+[editor.statusline]
+right = ["diagnostics", "selections", "register", "position", "file-encoding", "file-type"]
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
