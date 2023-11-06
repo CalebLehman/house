@@ -1,0 +1,4 @@
+*
+!.gitignore
+!create_offline_tar.sh
+!Makefile
