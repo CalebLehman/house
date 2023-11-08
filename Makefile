@@ -54,6 +54,8 @@ rust-utils:
 	~/.cargo/bin/cargo binstall -y exa
 	~/.cargo/bin/cargo binstall -y bat
 	~/.cargo/bin/cargo binstall -y alacritty
+	~/.cargo/bin/cargo binstall -y fd-find
+	~/.cargo/bin/cargo binstall -y ripgrep
 	curl -sSL https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin --yes
 
 .PHONY: picom
