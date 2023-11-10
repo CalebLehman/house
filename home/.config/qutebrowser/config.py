@@ -10,6 +10,7 @@ c.scrolling.smooth = True
 c.tabs.position = "left"
 c.tabs.width = "10%"
 
+config.bind("ge", "scroll-to-perc", "normal")
 config.bind("gJ", "tab-move +", "normal")
 config.bind("gK", "tab-move -", "normal")
 config.bind("<Ctrl+=>", "zoom-in", "normal")
