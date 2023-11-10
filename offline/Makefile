@@ -1,4 +1,4 @@
-all: home fonts fish tmux check helix neovim rust rust-utils i3 qutebrowser misc
+all: home fonts fish tmux check helix neovim rust rust-utils i3 qutebrowser
 
 .PHONY: home
 home:
@@ -71,8 +71,3 @@ qutebrowser:
 	sudo apt-get install -y python3-venv
 	cd ~/.local/src/qutebrowser && rm -rf .venv && python3 scripts/mkvenv.py
 	rm -rf ~/.local/bin/qutebrowser && ln -s ~/.config/qutebrowser/run.sh ~/.local/bin/qutebrowser
-
-.PHONY: misc
-misc:
-	echo Source linked via stow for offline
-	rm -rf ~/.local/bin/diff-so-fancy && ln -s ~/.local/src/diff-so-fancy/diff-so-fancy ~/.local/bin/diff-so-fancy

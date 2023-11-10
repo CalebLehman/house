@@ -1,4 +1,4 @@
-all: home fonts fish tmux check helix neovim rust rust-utils i3 qutebrowser misc
+all: home fonts fish tmux check helix neovim rust rust-utils i3 qutebrowser
 
 .PHONY: home
 home:
@@ -56,6 +56,7 @@ rust-utils:
 	~/.cargo/bin/cargo binstall -y alacritty
 	~/.cargo/bin/cargo binstall -y fd-find
 	~/.cargo/bin/cargo binstall -y ripgrep
+	~/.cargo/bin/cargo binstall -y git-delta
 	curl -sSL https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin --yes
 
 .PHONY: picom
@@ -90,12 +91,3 @@ qutebrowser:
 	  cd ~/.local/src/qutebrowser && python3 scripts/mkvenv.py; \
 	fi
 	rm -rf ~/.local/bin/qutebrowser && ln -s ~/.config/qutebrowser/run.sh ~/.local/bin/qutebrowser
-
-.PHONY: misc
-misc:
-	if [ -d ~/.local/src/diff-so-fancy ]; then \
-	  cd ~/.local/src/diff-so-fancy && git pull; \
-	else \
-	  git clone https://github.com/so-fancy/diff-so-fancy.git ~/.local/src/diff-so-fancy; \
-	  rm -rf ~/.local/bin/diff-so-fancy && ln -s ~/.local/src/diff-so-fancy/diff-so-fancy ~/.local/bin/diff-so-fancy; \
-	fi

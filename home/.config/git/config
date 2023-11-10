@@ -3,11 +3,19 @@
 [commit]
 	verbose = true
 [core]
-	pager = "diff-so-fancy | less --RAW-CONTROL-CHARS --quit-if-one-screen --no-init"
+	pager = delta
+[delta]
+	light = false
+	line-numbers = true
+	navigate = true
+	side-by-side = true
+[diff]
+	colorMoved = default
 [interactive]
-	diffFilter = "diff-so-fancy --patch"
+	diffFilter = delta --color-only
 [merge]
 	ff = only
+	conflictstyle = diff3
 [status]
 	short = true
 	branch = true
