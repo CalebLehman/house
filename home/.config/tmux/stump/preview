@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+from subprocess import run
+from sys import argv
+
+
+from lib import projects_metadata
+
+
+if __name__ == "__main__":
+    if len(argv) < 2:
+        exit(1)
+    with projects_metadata() as metadata:
+        project_metadata = metadata[argv[1]]
+        run(f"bat -pp --color always {project_metadata.script}", shell=True)

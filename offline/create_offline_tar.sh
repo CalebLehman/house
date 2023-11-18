@@ -28,6 +28,7 @@ curl -sSL https://starship.rs/install.sh | sh -s -- --bin-dir home/.local/bin --
 ~/.cargo/bin/cargo binstall -y fd-find && cp ~/.cargo/bin/fd home/.local/bin/
 ~/.cargo/bin/cargo binstall -y ripgrep && cp ~/.cargo/bin/rg home/.local/bin/
 ~/.cargo/bin/cargo binstall -y git-delta && cp ~/.cargo/bin/delta home/.local/bin/
+~/.cargo/bin/cargo binstall -y skim && cp ~/.cargo/bin/sk home/.local/bin/
 
 git clone --depth=1 https://github.com/jonaburg/picom home/.local/src/picom
 rm -rf home/.local/src/picom/.git

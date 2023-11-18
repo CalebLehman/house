@@ -20,6 +20,8 @@ fish:
 .PHONY: tmux
 tmux:
 	sudo apt install -y xclip tmux
+	python3 -m venv ~/.tmux.venv
+	~/.tmux.venv/bin/pip install libtmux python-lsp-server
 
 .PHONY: check
 check:

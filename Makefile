@@ -17,7 +17,9 @@ fish:
 
 .PHONY: tmux
 tmux:
-	sudo apt install -y xclip tmux
+	sudo apt install -y xclip tmux python3-venv
+	python3 -m venv ~/.tmux.venv
+	~/.tmux.venv/bin/pip install libtmux python-lsp-server
 
 .PHONY: check
 check:
@@ -57,6 +59,7 @@ rust-utils:
 	~/.cargo/bin/cargo binstall -y fd-find
 	~/.cargo/bin/cargo binstall -y ripgrep
 	~/.cargo/bin/cargo binstall -y git-delta
+	~/.cargo/bin/cargo binstall -y skim
 	curl -sSL https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin --yes
 
 .PHONY: picom
