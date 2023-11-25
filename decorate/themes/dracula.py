@@ -29,5 +29,6 @@ dracula = Theme(
     opacity=0.7,
     font="Terminess Nerd Font Mono",
     helix="dracula",
+    source=__file__,
 )
 

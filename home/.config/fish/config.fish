@@ -17,6 +17,11 @@ if status is-interactive
     abbr --add cat 'bat'
   end
 
+  if test -f ~/.config/starship.toml
+    bind -M default \ct 'swap_prompt; commandline -f repaint'
+    bind -M insert \ct 'swap_prompt; commandline -f repaint'
+  end
+
   if command -q starship
     starship init fish | source
   end

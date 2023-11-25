@@ -29,5 +29,6 @@ kanagawa_dragon = Theme(
     opacity=0.7,
     font="Terminess Nerd Font Mono",
     helix="kanagawa",
+    source=__file__,
 )
 

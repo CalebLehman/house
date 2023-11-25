@@ -5,14 +5,21 @@ theme = "personal"
 'A-}' = "rotate_selection_contents_forward"
 'A-v' = "keep_selections"
 'A-V' = "remove_selections"
+x = "extend_line"
 
-[keys.normal.space]
+[keys.normal.space.t]
 i = ":toggle lsp.display-inlay-hints"
-u = ":toggle soft-wrap-enable"
+w = ":toggle soft-wrap-enable"
+h = ":toggle file-picker.hidden"
+g = ":toggle file-picker.git-ignore"
 
 [editor]
 completion-trigger-len = 1
 color-modes = true
+
+[editor.file-picker]
+hidden = false
+git-ignore = false
 
 [editor.cursor-shape]
 insert = "bar"

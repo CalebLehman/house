@@ -1,0 +1,54 @@
+add_newline = false
+
+format = '''
+[\[](dimmed)$time[\]](dimmed) $git_branch$git_commit$git_state$git_status
+$username[@](bright-red)$hostname $directory
+$character '''
+
+[time]
+disabled = false
+style = 'bright-black'
+format = '[$time]($style)'
+
+[username]
+show_always = true
+style_user = 'bright-yellow'
+format = '[$user]($style)'
+
+[hostname]
+ssh_only = false
+style = 'bright-green'
+format = '[$hostname]($style)'
+
+[directory]
+style = 'bright-blue'
+format = '[$path]($style)'
+
+[character]
+success_symbol = '[\$](dimmed green)'
+error_symbol = '[\$](bright-red)'
+vimcmd_symbol = '[\$](dimmed blue)'
+format = '$symbol'
+
+[git_branch]
+style = 'bright-black'
+format = '[$branch(:$remote_branch)]($style)'
+
+[git_commit]
+style = 'bright-black'
+format = '[$hash]($style)'
+
+[git_status]
+style = 'cyan'
+conflicted = '​'
+untracked = '​'
+modified = '​'
+staged = '​'
+renamed = '​'
+deleted = '​'
+stashed = '≡'
+format = '[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bright-purple) ($ahead_behind$stashed)]($style)'
+
+[git_state]
+style = 'bright-black'
+format = ' [$state( $progress_current/$progress_total)]($style) '

@@ -6,6 +6,7 @@ home:
 	mkdir -p ~/.local/src # don't want this whole thing symlinked
 	mkdir -p ~/.local/bin # don't want this whole thing symlinked
 	stow home --target ~
+	cd ~/.config && ln -s ~/.config/starship/same_line.toml starship.toml
 
 .PHONY: fonts
 fonts:
