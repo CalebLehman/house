@@ -9,7 +9,7 @@ x = "extend_line"
 
 [keys.normal.space.t]
 i = ":toggle lsp.display-inlay-hints"
-w = ":toggle soft-wrap-enable"
+w = ":toggle soft-wrap.enable"
 h = ":toggle file-picker.hidden"
 g = ":toggle file-picker.git-ignore"
 
