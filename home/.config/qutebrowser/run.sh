@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
-~/.local/src/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"
+if [ $# -eq 0 ]; then
+  ~/.local/src/qutebrowser/.venv/bin/python3 -m qutebrowser --backend webengine
+else
+  ~/.local/src/qutebrowser/.venv/bin/python3 -m qutebrowser "$@"
+fi
