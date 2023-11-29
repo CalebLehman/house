@@ -23,7 +23,7 @@ def get_new_project_name(metadata: Dict[str, ProjectMetadata]) -> str:
 def get_existing_project_name(metadata: Dict[str, ProjectMetadata]) -> str:
     preview = Path.home() / ".config" / "tmux" / "stump" / "preview"
     name = run(
-        ["sk", "--header", "Choose project", "--preview", f"{preview} {{}}"],
+        ["sk", "--header", "Choose project", "--preview", f"{preview} {{}}", "--color=16"],
         input="\n".join(metadata.keys()),
         text=True,
         capture_output=True).stdout.strip()
@@ -83,7 +83,7 @@ def switch_project():
 
 def get_operation():
     name = run(
-        ["sk", "--header", "STUMP - [S]imple [T]m[U]x [M]anager for [P]rojects"],
+        ["sk", "--header", "STUMP - [S]imple [T]m[U]x [M]anager for [P]rojects", "--color=16"],
         input="\n".join(operations.keys()),
         text=True,
         capture_output=True).stdout.strip()

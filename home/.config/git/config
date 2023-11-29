@@ -5,6 +5,7 @@
 [core]
 	pager = delta
 [delta]
+	syntax-theme = ansi
 	light = false
 	line-numbers = true
 	navigate = true

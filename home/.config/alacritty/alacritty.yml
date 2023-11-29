@@ -1,0 +1,3 @@
+import:
+  - ~/.config/alacritty/appearance.yml
+  - ~/.config/alacritty/local.yml

@@ -1,12 +1,12 @@
 from .dracula import dracula
-from .kanagawa_dragon import kanagawa_dragon
-from .base16 import base16
+from .one_dark import one_dark
+from .one_light import one_light
 from .theme import Theme
 
 themes: [Theme] = [
     dracula,
-    kanagawa_dragon,
-    base16,
+    one_dark,
+    one_light,
 ]
 
 def get_theme(name: str) -> Theme:
