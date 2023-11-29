@@ -4,7 +4,7 @@ all: home fonts fish tmux check helix neovim rust rust-utils i3 qutebrowser
 home:
 	mkdir -p ~/.config # don't want this whole thing symlinked
 	stow home --target ~
-	cd ~/.config && ln -s ~/.config/starship/same_line.toml starship.toml
+	cd ~/.config && rm -rf starship.toml && ln -s ~/.config/starship/same_line.toml starship.toml
 
 .PHONY: fonts
 fonts:
