@@ -31,7 +31,7 @@ render = true
 character = "┆"
 
 [editor.statusline]
-right = ["diagnostics", "selections", "register", "position", "file-encoding", "file-type"]
+right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-encoding", "file-type"]
 
 [editor.lsp]
 display-messages = true
