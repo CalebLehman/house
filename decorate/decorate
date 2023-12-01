@@ -69,6 +69,7 @@ def main(font: str, theme: Theme):
         Config("Rofi", Config.TEMPLATES_DIR / "rofi" / "palette.rasi", Path.home() / ".config" / "rofi" / "palette.rasi"),
         Config("Neovim", Config.TEMPLATES_DIR / "nvim" / "base16.vim", Path.home() / ".config" / "nvim" / "colors" / "base16.vim"),
         Config("i3", Config.TEMPLATES_DIR / "i3" / "config.appearance", Path.home() / ".config" / "i3" / "config.appearance"),
+        Config("i3status", Config.TEMPLATES_DIR / "i3" / "i3status.conf", Path.home() / ".config" / "i3" / "i3status.conf"),
         Config("qutebrowser", Config.TEMPLATES_DIR / "qutebrowser" / "theme.py", Path.home() / ".config" / "qutebrowser" / "theme.py"),
     ]
     for config in configs:
