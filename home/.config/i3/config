@@ -106,7 +106,7 @@ include ~/.config/i3/config.appearance
 
 for_window [class="Alacritty-float"] floating enable
 
-exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id pkill picom; sleep 0.1; picom --experimental-backends -b
 bindsym $mod_alt+l exec ~/.config/i3/lock.sh
 # exec --no-startup-id nm-applet
 exec_always --no-startup-id ~/.config/i3/machine-specific/setup.sh
