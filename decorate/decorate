@@ -2,7 +2,8 @@
 import argparse
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict
+from subprocess import run
+from typing import Dict, List
 
 from themes import themes, Theme, get_theme
 
@@ -77,9 +78,47 @@ def main(font: str, theme: Theme):
         generate_config(config, values)
 
 
+def prompt(header: str, options: List[str]) -> str:
+    choice = run(
+        ["sk", "--header", header, "--color=16"],
+        input="\n".join(options),
+        text=True,
+        capture_output=True,
+    ).stdout.strip()
+    if len(choice) == 0:
+        raise Exception()
+    return choice
+
+
 if __name__ == "__main__":
+    themes = [theme.name for theme in themes]
+
     parser = argparse.ArgumentParser(description="Generate auxiliary config files based on input")
-    parser.add_argument("--theme", required=True, choices=[theme.name for theme in themes], help="Theme")
-    parser.add_argument("--font", required=True, help="Font family (e.g. try `fc-list | cut -d: -f2 | cut -d, -f1 | sort -u`)")
+    parser.add_argument("--theme", choices=themes, help="Theme")
+    parser.add_argument("--font", help="Font family (e.g. try `fc-list | cut -d: -f2 | cut -d, -f1 | sort -u`)")
     args = parser.parse_args()
-    main(args.font, get_theme(args.theme))
+
+    if args.theme:
+        theme = args.theme
+    else:
+        try:
+            theme = prompt("Choose Theme", themes)
+        except Exception:
+            print("Must specify theme")
+            exit(1)
+
+    if args.font:
+        font = args.font
+    else:
+        fonts = [
+            line.split(":")[1].strip()
+            for line
+            in run(["fc-list"], text=True, capture_output=True).stdout.strip().split("\n")
+        ]
+        try:
+            font = prompt("Choose Font", fonts)
+        except Exception:
+            print("Must specify font")
+            exit(1)
+
+    main(font, get_theme(theme))
