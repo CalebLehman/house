@@ -115,8 +115,9 @@ if __name__ == "__main__":
             for line
             in run(["fc-list"], text=True, capture_output=True).stdout.strip().split("\n")
         ]
+        processed_fonts = sorted(set(fonts))
         try:
-            font = prompt("Choose Font", fonts)
+            font = prompt("Choose Font", processed_fonts)
         except Exception:
             print("Must specify font")
             exit(1)
