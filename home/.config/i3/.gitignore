@@ -1,2 +1,3 @@
 config.appearance
 i3status.conf
+dmenu_runner.sh

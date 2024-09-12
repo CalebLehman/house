@@ -1,0 +1,3 @@
+[[language]]
+name = "zig"
+indent = { tab-width = 2, unit = "\t" }

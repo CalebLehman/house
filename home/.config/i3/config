@@ -10,15 +10,14 @@ bindsym $mod+space          focus mode_toggle
 # i3 reload config, restart, exit
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+bindsym $mod+Shift+e exec ~/.config/i3/power_menu.sh  
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # applications
 bindsym $mod+Return         exec --no-startup-id alacritty
-bindsym $mod+Shift+Return   exec --no-startup-id "alacritty --class Alacritty-float,Alacritty-float"
-bindsym $mod+d              exec --no-startup-id "rofi -modi run -show run -matching fuzzy"
+bindsym $mod+d              exec --no-startup-id ~/.config/i3/dmenu_runner.sh dmenu_run
 bindsym $mod+b              exec --no-startup-id qutebrowser
 
 # windows management

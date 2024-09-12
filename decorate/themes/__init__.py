@@ -2,6 +2,7 @@ from .alabaster_dark import alabaster_dark
 from .base16_default import base16_default
 from .dracula import dracula
 from .everforest_light import everforest_light
+from .focused import focused
 from .material import material
 from .one_dark import one_dark
 from .one_light import one_light
@@ -13,6 +14,7 @@ themes: [Theme] = [
     base16_default,
     dracula,
     everforest_light,
+    focused,
     material,
     one_dark,
     one_light,

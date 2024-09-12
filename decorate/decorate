@@ -3,6 +3,7 @@ import argparse
 from dataclasses import dataclass
 from pathlib import Path
 from subprocess import run
+import shutil
 from typing import Dict, List
 
 from themes import themes, Theme, get_theme
@@ -55,6 +56,7 @@ def build_values(font: str, theme: Theme) -> Dict[str, str]:
 def generate_config(config: Config, values: Dict[str, str]):
     with open(config.template_path, "r") as template:
         config.output_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(config.template_path, config.output_path)
         with open(config.output_path, "w") as output:
             for line in template:
                 for k, v in values.items():
@@ -70,6 +72,7 @@ def main(font: str, theme: Theme):
         Config("Rofi", Config.TEMPLATES_DIR / "rofi" / "palette.rasi", Path.home() / ".config" / "rofi" / "palette.rasi"),
         Config("Neovim", Config.TEMPLATES_DIR / "nvim" / "base16.vim", Path.home() / ".config" / "nvim" / "colors" / "base16.vim"),
         Config("i3", Config.TEMPLATES_DIR / "i3" / "config.appearance", Path.home() / ".config" / "i3" / "config.appearance"),
+        Config("dmenu runner", Config.TEMPLATES_DIR / "i3" / "dmenu_runner.sh", Path.home() / ".config" / "i3" / "dmenu_runner.sh"),
         Config("i3status", Config.TEMPLATES_DIR / "i3" / "i3status.conf", Path.home() / ".config" / "i3" / "i3status.conf"),
         Config("qutebrowser", Config.TEMPLATES_DIR / "qutebrowser" / "theme.py", Path.home() / ".config" / "qutebrowser" / "theme.py"),
     ]
